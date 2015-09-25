@@ -1,6 +1,6 @@
 void setup()
 {
-  //your code here
+  size(600,400);
 }
 void draw()
 {
@@ -13,10 +13,15 @@ void mouseDragged()
 
 class Snowflake
 {
-  //class member variable declarations
+  //member variables
+  int x , y;
+  boolean isMoving;  
+
   Snowflake()
   {
-    //class member variable initializations
+    x = (int)(Math.random()*600);
+    y = (int)(Math.random()*400);
+    isMoving = true;
   }
   void show()
   {
