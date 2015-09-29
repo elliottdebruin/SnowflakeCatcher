@@ -1,5 +1,5 @@
 Snowflake[] snow;
-int sNum = 1000;
+int sNum = 100;
 
 void setup()
 {
@@ -21,11 +21,16 @@ void draw()
     snow[i].show();
   }
 }
+ void keyPressed() {
+  
+background(0);
+  
+}
 void mouseDragged()
 {
   noStroke();
-  fill(255,0,0);
-  ellipse(mouseX, mouseY, 5, 5);
+  fill(0,0,200);
+  ellipse(mouseX, mouseY, 8, 8);
 }
 
 class Snowflake
@@ -48,7 +53,7 @@ class Snowflake
   }
   void lookDown()
   {
-    if (get(x, y+5) == color(255,0,0) || y > 400) {
+    if (get(x, y+5) == color(0,0,200) || y > 400) {
       isMoving = false;
     } else {
       isMoving = true;
