@@ -26,7 +26,7 @@ void draw()
 background(0);
   
 }
-void mouseDragged()
+void mousePressed()
 {
   noStroke();
   fill(0,0,200);
