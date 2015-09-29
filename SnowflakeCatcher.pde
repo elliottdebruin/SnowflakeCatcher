@@ -30,7 +30,7 @@ void mousePressed()
 {
   noStroke();
   fill(0,0,200);
-  ellipse(mouseX, mouseY, 8, 8);
+  ellipse(mouseX, mouseY, 15, 15);
 }
 
 class Snowflake
@@ -48,8 +48,13 @@ class Snowflake
   void show()
   {
     noStroke();
+    if (isMoving == false) {
+      fill(0,0,0,20);
+      ellipse(x, y, 5, 5);
+    } 
     fill(255);
     ellipse(x, y, 5, 5);
+  
   }
   void lookDown()
   {
