@@ -1,6 +1,6 @@
 Snowflake[] snow;
 int sNum = 100;
-
+int water =0;
 void setup()
 {
   background(0);
@@ -13,6 +13,12 @@ void setup()
 }
 void draw()
 {
+  background(0);
+  fill(0);
+  stroke(200);
+  quad(mouseX + 20, mouseY, mouseX - 20, mouseY, mouseX - 20, mouseY - 40, mouseX + 20, mouseY - 40);
+  fill(0,0,200);
+  quad(mouseX + 20, mouseY, mouseX - 20, mouseY, mouseX - 20, mouseY - water, mouseX + 20, mouseY - water);
   for (int i = 0; i < snow.length; i++) {
     snow[i].erase();
     snow[i].lookDown();
@@ -26,12 +32,7 @@ void draw()
 background(0);
   
 }
-void mousePressed()
-{
-  noStroke();
-  fill(0,0,200);
-  ellipse(mouseX, mouseY, 15, 15);
-}
+
 
 class Snowflake
 {
@@ -47,19 +48,21 @@ class Snowflake
   }
   void show()
   {
+    if (isMoving == true){
     noStroke();
-    if (isMoving == false) {
-      fill(0,0,0,20);
-      ellipse(x, y, 5, 5);
-    } 
     fill(255);
     ellipse(x, y, 5, 5);
-  
+  }
   }
   void lookDown()
   {
-    if (get(x, y+5) == color(0,0,200) || y > 400) {
+    if (x > mouseX - 20 && mouseX + 20 > x && y == mouseY-3  || y > 400) {
       isMoving = false;
+      x = 1000000;
+      if (water <40) {
+        water = water + 1;
+      }
+      
     } else {
       isMoving = true;
     }
