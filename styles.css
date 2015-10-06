@@ -1,8 +1,9 @@
 
 body {
-    background-image: url(snow.jpg)  no-repeat center center fixed;
-    background-color: #cccccc;
+    background-image: url(snow.jpg);
+    
   background-size: cover;
+  color: rgb(255,255,255);
     font-family: "Open Sans", sans-serif;
     text-align: center;
 
