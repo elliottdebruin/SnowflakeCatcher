@@ -1,6 +1,6 @@
 
 body {
-    background-image: url(snow.jpg);
+    background-image: url(background.jpg)no-repeat center center fixed;
     
   background-size: cover;
   color: rgb(255,255,255);
