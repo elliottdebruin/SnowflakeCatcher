@@ -1,9 +1,10 @@
 
 body {
-    background-color: rgb(0,0,100);
-    color: rgb(255,255,255);
+    background-image: url(snow.jpg);
+    background-color: #cccccc;
     font-family: "Open Sans", sans-serif;
     text-align: center;
+
 }
 
 #content {

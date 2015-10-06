@@ -1,6 +1,7 @@
 Snowflake[] snow;
 int sNum = 100;
 int water =0;
+int ounces = 0;
 void setup()
 {
   background(0);
@@ -14,11 +15,17 @@ void setup()
 void draw()
 {
   background(0);
-  fill(0);
+  fill(100);
+  strokeWeight(3);
   stroke(200);
   quad(mouseX + 20, mouseY, mouseX - 20, mouseY, mouseX - 20, mouseY - 40, mouseX + 20, mouseY - 40);
+  noStroke();
   fill(0,0,200);
-  quad(mouseX + 20, mouseY, mouseX - 20, mouseY, mouseX - 20, mouseY - water, mouseX + 20, mouseY - water);
+  quad(mouseX + 18, mouseY, mouseX - 17, mouseY, mouseX - 17, mouseY - water, mouseX + 18, mouseY - water);
+  fill(100);
+  stroke(200);
+  strokeWeight(3);
+  ellipse(mouseX, mouseY - 40, 40, 10);
   for (int i = 0; i < snow.length; i++) {
     snow[i].erase();
     snow[i].lookDown();
@@ -26,10 +33,19 @@ void draw()
     snow[i].wrap();
     snow[i].show();
   }
+  noFill();
+    stroke(200);
+  strokeWeight(3);
+  ellipse(mouseX, mouseY - 40, 40, 10);
+
+    fill(255);
+  textSize(20);
+  text("Ounces of water collected:", 300,380);
+  text(ounces, 565,380);
 }
- void keyPressed() {
+ void mousePressed() {
   
-background(0);
+water = 0;
   
 }
 
@@ -61,6 +77,7 @@ class Snowflake
       x = 1000000;
       if (water <40) {
         water = water + 1;
+        ounces = ounces + 1;
       }
       
     } else {
