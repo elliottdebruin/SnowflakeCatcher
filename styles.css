@@ -1,8 +1,10 @@
 
 body {
-    background-image: url(background.jpg)no-repeat center center fixed;
+    background-image: url(background.jpg);
     
   background-size: cover;
+     background-repeat: no-repeat;
+    background-position: center center; 
   color: rgb(255,255,255);
     font-family: "Open Sans", sans-serif;
     text-align: center;
